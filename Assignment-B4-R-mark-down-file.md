@@ -108,15 +108,15 @@ top20%>%
 
 **The rule of the word arrangement**
 
-If words begin with a vowel (aeiou), move the initial vowel letter to
+If words begin with a vowel (“aeiou”), move the initial vowel letter to
 the end and then add “et” near the end of the word
 
-If the words begin with Ch or Cr, then move both letters to the end of
-the word and add et in the end
+If the words begin with “Ch” or “Cr”, then move both letters to the end
+of the word and add et in the end
 
-If the words begin with a consonant and the consonant is not Ch or Cr,
-move the last letter from the end to the begining and then add et near
-the end of the word.
+If the words begin with a consonant and the consonant is not “Ch” or
+“Cr”, move the last letter from the end to the begining and then add et
+near the end of the word.
 
 ``` r
 rearrange_f <- function(word) {
@@ -144,7 +144,7 @@ return(rearranged)  }
 
 ``` r
 #' Title: Rearrange the word function (rearrange_f)
-#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowel (aeiou), move the inital vowel letter to the end and then add et near the end of the word.Rule2:If the words begin with Ch or Cr, then move both letters to the end of the word and add et in the end. Rule3:  If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
+#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowel ("aeiou"), move the inital vowel letter to the end and then add et near the end of the word.Rule2:If the words begin with Ch or Cr, then move both letters to the end of the word and add et in the end. Rule3:  If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
 
 #' @param word: a character provided for word rearrangement 
 
@@ -206,7 +206,7 @@ test_that("run into error ",{
 })
 ```
 
-    ## Test passed 🎉
+    ## Test passed 😀
 
 ``` r
 #Test if an expected value is generated 
@@ -220,4 +220,4 @@ test_that ("generate the same out put",{
   })
 ```
 
-    ## Test passed 😀
+    ## Test passed 🥇
