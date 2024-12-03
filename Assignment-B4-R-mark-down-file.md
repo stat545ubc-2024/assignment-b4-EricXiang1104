@@ -132,7 +132,7 @@ rearrange_f <- function(word) {
     rearranged <- paste0(substr(word, 2, nchar(word)), substr(word, 1, 1), "et")}
         
     else if (grepl("^(ch)|(cr)",word)){
-        #Rule 2: if start  with ch or cr, move both letters to the end of the word and add et in the end 
+        #Rule 2: if start with "ch" or "cr", move both letters to the end of the word and add et in the end 
             rearranged <- paste0(substr(word, 3, nchar(word)), substr(word, 1, 2), "et")}
   else{ 
     #rule3: move the last letter to the first if starts with a consonant not "ch or "cr"
@@ -144,7 +144,7 @@ return(rearranged)  }
 
 ``` r
 #' Title: Rearrange the word function (rearrange_f)
-#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowel ("aeiou"), move the inital vowel letter to the end and then add et near the end of the word.Rule2:If the words begin with Ch or Cr, then move both letters to the end of the word and add et in the end. Rule3:  If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
+#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowel ("aeiou"), move the inital vowel letter to the end and then add et near the end of the word.Rule2:If the words begin with "Ch" or "Cr", then move both letters to the end of the word and add "et" in the end. Rule3:  If the words begin with a consonant and the consonant is not "Ch" or "Cr", move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
 
 #' @param word: a character provided for word rearrangement 
 
@@ -196,7 +196,7 @@ test_that("A character is returned",{
   })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 🥳
 
 ``` r
 #test to see if running error if giving noncharacter input  
@@ -206,7 +206,7 @@ test_that("run into error ",{
 })
 ```
 
-    ## Test passed 😀
+    ## Test passed 🥇
 
 ``` r
 #Test if an expected value is generated 
@@ -220,4 +220,4 @@ test_that ("generate the same out put",{
   })
 ```
 
-    ## Test passed 🥇
+    ## Test passed 🌈

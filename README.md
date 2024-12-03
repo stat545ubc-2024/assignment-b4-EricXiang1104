@@ -6,7 +6,7 @@ Fo exercise 1, after removing the stop words (is", "a", "for", "in"), I counted 
 
 For exercise, a function rearrange_f is created to arrange the word orders when provided a specific character, it will rearrange the word based on the following rule:
 
--   If words begin with a vowel (aeiou), move the initial vowel letter to the end and then add "et" near the end of the word
+-   If words begin with a vowel ("aeiou"), move the initial vowel letter to the end and then add "et" near the end of the word
 
 -   If the words begin with "Ch" or "Cr", then move both letters to the end of the word and add "et" in the end
 
