@@ -31,31 +31,33 @@ library(testthat)#used to test the function
 
 
 corpuso<-Corpus(VectorSource(janeaustenr::emma))
-custom_stopwords <- c("is", "a", "for", "in")
+custom_stopwords <- c("is", "a", "for", "in")#custom the stopword
 corpuso_cleaned<-tm_map(corpuso,removeWords,custom_stopwords)
 
-text_cleaned <- as.character(corpuso_cleaned)
+text_cleaned <- as.character(corpuso_cleaned)# turn into character 
 
-bookdata<-data.frame(text=text_cleaned[1])
+bookdata<-data.frame(text=text_cleaned[1])#turn the character into data frame for word analysis 
 
 words<-bookdata%>%
-	unnest_tokens(word,text)
-#try replacing the unnest function 
+	unnest_tokens(word,text)#restructure it as one token per row format to separate each line into words. 
+ 
 word_counts <- words %>%
 	count(word, sort = TRUE)
 #pick the top 20 most frequently used words  
 top20<-word_counts%>%
-	slice_max(n,n=20)
+	slice_max(n,n=20)# pick the top 20 words 
+# plot the histogram 
 top20%>%
 	ggplot(aes(x=word,y=n))+
 	geom_col()+
-	labs(title="Most Common words in Emma",x="Words",y="Frequency")
+	labs(title="Top20 most Common words in Emma",x="Words",y="Frequency") 
+
 ```
 
 **The rule of the word arrangement**
 
-If words begin with a vowl (aeiou), move the inital vowl letter to the
-end and then add et near the end of the word
+If words begin with a vowel (aeiou), move the initial vowel letter to
+the end and then add "et" near the end of the word
 
 If the words begin with Ch or Cr, then move both letters to the end of
 the word and add et in the end
@@ -91,8 +93,8 @@ return(rearranged)	}
 ```
 
 ```{r}
-#' Title: Rearrange the word function
-#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowl (aeiou), move the inital vowl letter to the end and then add et near the end of the word.Rule2:If the words begin with Ch or Cr, then move both letters to the end of the word and add et in the end. Rule3:  If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
+#' Title: Rearrange the word function (rearrange_f)
+#'Function description: This function is to rearrange the characters provided in the word. Rule1:  If words begin with a vowel (aeiou), move the inital vowel letter to the end and then add et near the end of the word.Rule2:If the words begin with Ch or Cr, then move both letters to the end of the word and add et in the end. Rule3:  If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the begining and then add et near the end of the word.Lastly, the function will return an error message if the non-character is provided 
 
 #' @param word: a character provided for word rearrangement 
 
@@ -117,28 +119,28 @@ rearrange_f(1)
 ```{r}
 
 #Test to see if character is the output 
-test_that("A character is returned", 
-          {expect_equal(class(rearrange_f("word")),"character")
+test_that("A character is returned",{
+         	expect_equal(class(rearrange_f("word")),"character")
           expect_equal(class(rearrange_f("apple")),"character")
           
   })
 
 
 #test to see if running error if giving noncharacter input  
-test_that("run into error ",
- {expect_error(rearrange_f(TRUE))
+test_that("run into error ",{
+	expect_error(rearrange_f(TRUE))
   expect_error(rearrange_f(1))
 })
 
 
 #Test if an expected value is generated 
 #I first rearrnaged manually create two variables to indicate the output 
-output1<-"dworet"
-ouput2<-"ppleaet"
 
 test_that ("generate the same out put",{
 					expect_equal(rearrange_f("word"),"dworet")
           expect_equal(rearrange_f("apple"),"ppleaet")
+          expect_equal(rearrange_f("crab"),"abcret")
+          expect_equal(rearrange_f("chrome"),"romechet")
   })
 
 ```
