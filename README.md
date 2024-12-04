@@ -10,4 +10,4 @@ For exercise, a function rearrange_f is created to arrange the word orders when 
 
 -   If the words begin with "Ch" or "Cr", then move both letters to the end of the word and add "et" in the end
 
--   If the words begin with a consonant and the consonant is not Ch or Cr, move the last letter from the end to the beginning and then add "et" near the end of the word.
+-   If the words begin with a consonant and the consonant is not "Ch" or "Cr", move the last letter from the end to the beginning and then add "et" near the end of the word.
